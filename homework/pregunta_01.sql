@@ -17,3 +17,6 @@
 --
 --  >>> Escriba su codigo a partir de este punto <<<
 --
+-- query.sql
+SELECT SUM(c12) AS "SUM(c12)"
+FROM tbl1;

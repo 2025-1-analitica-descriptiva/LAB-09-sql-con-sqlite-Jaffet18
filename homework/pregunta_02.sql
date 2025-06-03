@@ -18,3 +18,6 @@
 --
 --  >>> Escriba su codigo a partir de este punto <<<
 -- 
+-- query.sql
+SELECT COUNT(*) AS "COUNT(*)"
+FROM tbl1;
