@@ -44,8 +44,14 @@
 --
 SELECT
   K0,
-  MAX(c12) AS "MAX(c12)",
-  MIN(c12) AS "min(C12)"
-FROM tbl1
-GROUP BY K0
+  RTRIM(RTRIM(CAST(ROUND(max_val, 2) AS TEXT), '0'), '.') AS "MAX(c12)",
+  RTRIM(RTRIM(CAST(ROUND(min_val, 2) AS TEXT), '0'), '.') AS "min(C12)"
+FROM (
+  SELECT
+    K0,
+    MAX(c12) AS max_val,
+    MIN(c12) AS min_val
+  FROM tbl1
+  GROUP BY K0
+)
 ORDER BY K0;

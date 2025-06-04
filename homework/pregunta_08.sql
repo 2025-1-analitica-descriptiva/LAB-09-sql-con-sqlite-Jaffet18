@@ -43,7 +43,7 @@
 --
 SELECT
   STRFTIME('%Y', c23) AS YEAR,
-  AVG(c21)
+  ROUND(AVG(c21), 2) AS "AVG(c21)"
 FROM tbl2
 GROUP BY
   YEAR
