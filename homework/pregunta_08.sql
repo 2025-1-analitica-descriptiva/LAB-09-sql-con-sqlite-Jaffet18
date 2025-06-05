@@ -42,10 +42,9 @@
 --  >>> Escriba su codigo a partir de este punto <<<
 --
 SELECT
-  STRFTIME('%Y', c23) AS YEAR,
-  ROUND(AVG(c21), 2) AS "AVG(c21)"
+    STRFTIME('%Y', c23) AS "strftime('%Y', c23)",
+    ROUND(AVG(c21), 2) AS "avg(c21)"
 FROM tbl2
-GROUP BY
-  YEAR
-ORDER BY
-  YEAR;
+GROUP BY STRFTIME('%Y', c23)
+ORDER BY STRFTIME('%Y', c23);
+
